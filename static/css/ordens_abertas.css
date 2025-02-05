@@ -1,84 +1,113 @@
-/* 🔹 Estilização Global */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
+/* 🔹 Reset e Estilos Gerais */
+body, html {
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
 
-/* 🔹 Navbar */
-.navbar {
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+/* 🔹 Cabeçalho */
+header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1100;
 }
 
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.3rem;
-}
-
-/* 🔹 Ajuste do Menu Hamburguer */
-.navbar-toggler {
+/* 🔹 Botão do Menu (Hambúrguer) */
+.menu-btn {
+    font-size: 24px;
+    background: none;
     border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background 0.3s ease-in-out;
+    z-index: 1200;
 }
 
-.navbar-nav .nav-link {
-    font-size: 1rem;
-    padding: 10px;
-}
-
-.navbar-nav .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+.menu-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
 }
 
-/* 🔹 Container Principal */
+/* 🔹 Sidebar (Menu Lateral) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
+    padding-top: 60px;
+    transition: left 0.3s ease-in-out;
+    z-index: 1150;
+}
+
+/* Exibir o menu quando ativo */
+.sidebar.active {
+    left: 0;
+}
+
+/* Links do menu */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white !important;
+    font-size: 16px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar ul li a.active {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* 🔹 Container da Página */
 .container {
-    max-width: 1200px;
+    margin-top: 80px;
+    padding: 20px;
+    text-align: center;
 }
 
-/* 🔹 Título */
-h2 {
-    font-weight: bold;
-    color: #212529;
-    margin-bottom: 20px;
-}
-
-/* 🔹 Tabela Responsiva */
+/* Tabela */
 .table {
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background: #2c2c2c;
+    border-radius: 10px;
 }
 
-.table th {
-    background-color: #343a40;
-    color: white;
+.table thead {
+    background: #333;
 }
 
 .table th, .table td {
-    text-align: center;
-    vertical-align: middle;
-    padding: 12px;
+    color: white;
 }
 
-/* 🔹 Responsividade para Telas Menores */
+/* Responsividade */
 @media (max-width: 768px) {
-    .table-responsive {
-        overflow-x: auto;
-    }
-
-    .navbar-brand {
-        font-size: 1.1rem;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 0.9rem;
-        padding: 8px;
-    }
-
-    h2 {
-        font-size: 1.5rem;
+    .container {
+        padding: 10px;
     }
 }

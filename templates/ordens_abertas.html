@@ -1,50 +1,41 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ordens Abertas - RICH TRADER</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../static/img/favicon.png">
+    <link rel="icon" type="image/png" href="../static/img/Rich_trader.jpeg">
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Ícones do Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/css/ordens_abertas.css">
 
     <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-
-    <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="../static/css/ordens_abertas.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
-    <!-- 🔥 Menu Hambúrguer -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html">RICH TRADER FOREX</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="menuNavbar">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">🏠 Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="grafico.html">📊 Gráficos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="dashboard.html">👤 Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="ordens_abertas.html">📈 Ordens Abertas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="historico.html">📜 Histórico</a></li>
-                    <li class="nav-item"><a class="nav-link" href="order_book.html">📘 Order Book</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">🚪 Logout</a></li>
-                </ul>
-            </div>
-        </div>
+    <!-- 🔹 Cabeçalho com Menu Hambúrguer -->
+    <header>
+        <button id="menu-toggle" class="menu-btn">☰</button>
+    </header>
+
+    <!-- 🔹 Sidebar (Menu Lateral) -->
+    <nav id="sidebar" class="sidebar">
+        <ul>
+            <li><a href="../index.html">🏠 Home</a></li>
+            <li><a href="grafico.html">📊 Gráficos</a></li>
+            <li><a href="dashboard.html">👤 Dashboard</a></li>
+            <li><a href="ordens_abertas.html" class="active">📈 Ordens Abertas</a></li>
+            <li><a href="historico.html">📜 Histórico</a></li>
+            <li><a href="order_book.html">📘 Order Book</a></li>
+            <li><a href="login.html">🚪 Logout</a></li>
+        </ul>
     </nav>
 
-    <!-- 🔥 Container Principal -->
-    <div class="container mt-4">
+    <!-- 🔹 Container Principal -->
+    <div class="container">
         <h2 class="text-center">📈 Ordens Abertas</h2>
         
         <!-- Tabela de Ordens -->
@@ -68,17 +59,14 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
+    <!-- 🔥 Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- SweetAlert2 -->
+    <!-- 🔥 SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!-- 🔥 WebSockets com Socket.IO -->
-    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
-
-    <!-- JS Personalizado -->
+    <!-- 🔥 JavaScript do Menu -->
     <script src="../static/js/ordens_abertas.js"></script>
-    
+
 </body>
 </html>
