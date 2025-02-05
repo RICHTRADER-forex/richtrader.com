@@ -12,7 +12,6 @@ body, html {
     flex-direction: column;
     align-items: center;
 }
-
 /* 🔹 Cabeçalho */
 header {
     width: 100%;
@@ -21,7 +20,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
     z-index: 1100;
@@ -29,9 +27,6 @@ header {
 
 /* 🔹 Botão do menu (Hambúrguer) */
 .menu-btn {
-    position: fixed;
-    top: 15px;
-    right: 15px; /* ✅ Acima dos botões */
     font-size: 24px;
     background: none;
     border: none;
@@ -42,10 +37,47 @@ header {
     z-index: 1200;
 }
 
-.menu-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
+/* 🔹 Botões de Compra e Venda */
+.buttons-container {
+    display: flex;
+    gap: 10px;
 }
+
+/* Estilização dos botões */
+.buy-button, .sell-button {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+}
+
+/* Estilo do botão de compra */
+.buy-button {
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Azul luxuoso */
+    color: white;
+}
+
+.buy-button:hover {
+    background: linear-gradient(135deg, #0056b3, #003580);
+    box-shadow: 0 0 12px rgba(0, 123, 255, 0.7);
+}
+
+/* Estilo do botão de venda */
+.sell-button {
+    background: linear-gradient(135deg, #dc3545, #a71d2a); /* Vermelho luxuoso */
+    color: white;
+}
+
+.sell-button:hover {
+    background: linear-gradient(135deg, #a71d2a, #7b131d);
+    box-shadow: 0 0 12px rgba(220, 53, 69, 0.7);
+}
+
 
 /* 🔹 Sidebar (Menu Lateral) */
 .sidebar {
@@ -91,50 +123,6 @@ header {
     border-radius: 5px;
 }
 
-/* 🔹 Botões de Compra e Venda */
-.trade-buttons {
-    position: fixed;
-    top: 15px; /* ✅ Alinhado com o menu */
-    right: 60px; /* ✅ Distância do canto direito */
-    display: flex;
-    gap: 10px;
-    z-index: 1100;
-}
-
-/* Estilização dos botões */
-.buy-button, .sell-button {
-    font-size: 16px;
-    font-weight: bold;
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s ease-in-out;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    text-transform: uppercase;
-}
-
-/* Estilo do botão de compra */
-.buy-button {
-    background: linear-gradient(135deg, #007bff, #0056b3); /* Azul luxuoso */
-    color: white;
-}
-
-.buy-button:hover {
-    background: linear-gradient(135deg, #0056b3, #003580);
-    box-shadow: 0 0 12px rgba(0, 123, 255, 0.7);
-}
-
-/* Estilo do botão de venda */
-.sell-button {
-    background: linear-gradient(135deg, #dc3545, #a71d2a); /* Vermelho luxuoso */
-    color: white;
-}
-
-.sell-button:hover {
-    background: linear-gradient(135deg, #a71d2a, #7b131d);
-    box-shadow: 0 0 12px rgba(220, 53, 69, 0.7);
-}
 
 /* 🔹 Ajustando a área do gráfico para não sobrepor os botões */
 #chart-container {
