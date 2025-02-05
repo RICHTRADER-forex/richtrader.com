@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    background: linear-gradient(135deg, #0f172a, #1e293b);
     color: #fff;
     display: flex;
     justify-content: center;
@@ -17,19 +17,21 @@ body {
 .deposit-container {
     background: rgba(255, 255, 255, 0.1);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
     text-align: center;
     width: 90%;
     max-width: 450px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Título */
 .deposit-container h2 {
     margin-bottom: 20px;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 600;
+    color: #ffcc00;
 }
 
 /* Labels e Select */
@@ -40,25 +42,26 @@ label {
     text-align: left;
 }
 
+/* Inputs e selects */
 select, input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-top: 5px;
     border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.15);
     color: #fff;
     outline: none;
     transition: all 0.3s ease-in-out;
 }
 
-/* Estilo ao focar nos inputs */
+/* Efeito ao focar nos inputs */
 select:focus, input:focus {
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
-/* Seção oculta por padrão */
+/* Seções ocultas */
 .hidden {
     display: none;
 }
@@ -68,7 +71,7 @@ select:focus, input:focus {
     margin-top: 15px;
     padding: 15px;
     background: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
+    border-radius: 8px;
     text-align: left;
 }
 
@@ -76,9 +79,10 @@ select:focus, input:focus {
 #crypto-section {
     margin-top: 15px;
     padding: 15px;
-    background: rgba(255, 75, 92, 0.2);
-    border-radius: 5px;
+    background: rgba(255, 75, 92, 0.15);
+    border-radius: 8px;
     text-align: center;
+    border: 1px solid rgba(255, 75, 92, 0.3);
 }
 
 #crypto-section p {
@@ -89,18 +93,22 @@ select:focus, input:focus {
 #crypto-section input {
     background: rgba(255, 255, 255, 0.2);
     text-align: center;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Estilo para o upload do comprovante */
+/* Upload do comprovante */
 input[type="file"] {
     border: 2px dashed rgba(255, 255, 255, 0.5);
     padding: 10px;
     cursor: pointer;
     text-align: center;
+    transition: all 0.3s ease-in-out;
 }
 
 input[type="file"]:hover {
     background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
 /* Mensagem de IBAN */
@@ -113,32 +121,48 @@ input[type="file"]:hover {
 /* Botão de envio */
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
-    background: #ff4b5c;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff4b5c, #e63946);
     color: #fff;
     font-size: 16px;
     font-weight: bold;
     cursor: not-allowed;
-    transition: background 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(255, 75, 92, 0.3);
 }
 
 /* Botão ativo */
 button.active {
     cursor: pointer;
-    background: #28a745;
+    background: linear-gradient(135deg, #28a745, #1e7d34);
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.7);
 }
 
 button.active:hover {
-    background: #1e7d34;
-    box-shadow: 0 0 8px rgba(40, 167, 69, 0.7);
+    background: linear-gradient(135deg, #1e7d34, #146c43);
+    box-shadow: 0 0 12px rgba(40, 167, 69, 0.9);
 }
 
 /* Responsividade */
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     .deposit-container {
         width: 95%;
+        padding: 25px;
+    }
+
+    .deposit-container h2 {
+        font-size: 22px;
+    }
+
+    select, input {
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
     }
 }
