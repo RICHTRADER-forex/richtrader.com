@@ -17,29 +17,22 @@
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="static/img/Rich_trader.jpeg" alt="RICH TRADER" class="logo-navbar"> RICH TRADER
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a href="index.html" class="nav-link">🏠 Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="templates/dashboard.html">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="templates/deposito.html">💰 Depósito</a></li>
-                    <li class="nav-item"><a class="nav-link" href="templates/retirada.html">💸 Retirada</a></li>
-                    <li class="nav-item"><a class="nav-link" href="templates/grafico.html">📊 Gráficos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="templates/login.html">Login</a></li>
-                    <li class="nav-item"><a class="btn btn-primary" href="templates/register.html">Cadastre-se</a></li>
-                </ul>
-                
-            </div>
-        </div>
-    </nav>
+<!-- Botão para abrir o menu -->
+<header>
+    <button id="menu-toggle" class="menu-btn">☰</button>
+</header>
+
+<!-- 🟢 Menu Lateral (Sidebar) -->
+<nav id="sidebar" class="sidebar">
+    <ul class="list-unstyled">
+        <li><a href="index.html" class="nav-link">🏠 Home</a></li>
+        <li><a href="deposito.html" class="nav-link">💰 Depósito</a></li>
+        <li><a href="retirada.html" class="nav-link">💸 Retirada</a></li>
+        <li><a href="grafico.html" class="nav-link">📊 Gráficos</a></li>
+        <li><a href="login.html" class="nav-link">🚪 Logout</a></li>
+    </ul>
+</nav>
+
 
     <!-- Hero Section -->
     <header class="hero">
