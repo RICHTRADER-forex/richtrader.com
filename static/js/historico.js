@@ -59,3 +59,13 @@ async function carregarHistoricoOrdens() {
  * 🔄 Atualiza o histórico a cada 10 segundos (caso feche ordens em tempo real)
  */
 setInterval(carregarHistoricoOrdens, 10000);
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const sidebar = document.getElementById("sidebar");
+
+    if (menuToggle && sidebar) {
+        menuToggle.addEventListener("click", function () {
+            sidebar.classList.toggle("active");
+        });
+    }
+});

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,29 +22,26 @@
 </head>
 <body>
 
-    <!-- 🔥 Menu Hambúrguer -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html">RICH TRADER FOREX</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="menuNavbar">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">🏠 Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="grafico.html">📊 Gráficos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="dashboard.html">👤 Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ordens_abertas.html">📈 Ordens Abertas</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="historico.html">📜 Histórico</a></li>
-                    <li class="nav-item"><a class="nav-link" href="order_book.html">📘 Order Book</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">🚪 Logout</a></li>
-                </ul>
-            </div>
-        </div>
+    <!-- 🔹 Cabeçalho com Menu Hambúrguer -->
+    <header>
+        <button id="menu-toggle" class="menu-btn">☰</button>
+    </header>
+
+    <!-- 🔹 Sidebar (Menu Lateral) -->
+    <nav id="sidebar" class="sidebar">
+        <ul>
+            <li><a href="../index.html">🏠 Home</a></li>
+            <li><a href="grafico.html">📊 Gráficos</a></li>
+            <li><a href="dashboard.html">👤 Dashboard</a></li>
+            <li><a href="ordens_abertas.html">📈 Ordens Abertas</a></li>
+            <li><a href="historico.html" class="active">📜 Histórico</a></li>
+            <li><a href="order_book.html">📘 Order Book</a></li>
+            <li><a href="login.html">🚪 Logout</a></li>
+        </ul>
     </nav>
 
-    <!-- 🔥 Container Principal -->
-    <div class="container mt-4">
+    <!-- 🔹 Container Principal -->
+    <div class="container">
         <h2 class="text-center">📜 Histórico de Operações</h2>
 
         <!-- Tabela de Histórico -->
