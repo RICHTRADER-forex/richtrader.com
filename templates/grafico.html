@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gráfico - RICH TRADER</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/grafico.css') }}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../static/img/favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/css/grafico.css">
+
+    <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- ✅ Certifique-se de incluir a versão correta do Lightweight Charts -->
+
+    <!-- ✅ Biblioteca Lightweight Charts -->
     <script src="https://unpkg.com/lightweight-charts@3.8.0/dist/lightweight-charts.standalone.production.js"></script>
 </head>
 <body>
@@ -18,12 +26,12 @@
     <!-- Sidebar Menu -->
     <nav id="sidebar" class="sidebar">
         <ul>
-            <li><a href="/">🏠 Home</a></li>
-            <li><a href="/dashboard">📊 Dashboard</a></li>
-            <li><a href="/ordens_abertas">📈 Ordens Abertas</a></li>
-            <li><a href="/historico">📜 Histórico</a></li>
-            <li><a href="/order_book">📘 Order Book</a></li>
-            <li><a href="/logout">Logout</a></li>
+            <li><a href="../index.html">🏠 Home</a></li>
+            <li><a href="dashboard.html">📊 Dashboard</a></li>
+            <li><a href="ordens_abertas.html">📈 Ordens Abertas</a></li>
+            <li><a href="historico.html">📜 Histórico</a></li>
+            <li><a href="order_book.html">📘 Order Book</a></li>
+            <li><a href="login.html">Logout</a></li>
         </ul>
     </nav>
 
@@ -33,13 +41,14 @@
         <button id="sell-btn" class="sell-button">Vender</button>
     </div>
     
-
     <!-- Contêiner do Gráfico -->
     <div id="chart-container"></div>
 
-   <!-- 🔥 Biblioteca Socket.IO para WebSockets -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
-<script src="{{ url_for('static', filename='js/grafico.js') }}"></script>
+    <!-- 🔥 Biblioteca Socket.IO para WebSockets -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
+
+    <!-- JavaScript do Gráfico -->
+    <script src="../static/js/grafico.js"></script>
 
 </body>
 </html>
