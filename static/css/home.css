@@ -1,4 +1,4 @@
-/* Importando fonte de luxo */
+/* Importando fontes luxuosas */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
 
 /* Reset básico */
@@ -31,14 +31,21 @@ body {
     padding: 15px 0;
 }
 
+.logo-navbar {
+    height: 40px;
+    margin-right: 10px;
+}
+
 .navbar-brand {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--white);
+    display: flex;
+    align-items: center;
 }
 
 .navbar-brand:hover {
-    color: var(--gold);
+    color: var(--white);
 }
 
 .navbar-nav .nav-link {
@@ -48,7 +55,10 @@ body {
 }
 
 .navbar-nav .nav-link:hover {
-    color: var(--gold);
+    color: var(--black);
+    background: var(--gold);
+    border-radius: 5px;
+    padding: 5px 10px;
 }
 
 /* Hero Section */
@@ -110,6 +120,7 @@ body {
     background: var(--dark-gray);
     padding: 20px;
     border-radius: 10px;
+    margin-bottom: 20px;
     transition: 0.3s;
 }
 
@@ -118,7 +129,7 @@ body {
     box-shadow: 0px 0px 15px var(--gold);
 }
 
-/* Testemunhos */
+/* Depoimentos */
 .testimonials {
     padding: 80px 0;
     background: var(--gray);
@@ -128,16 +139,38 @@ body {
 .testimonials h2 {
     font-size: 2.5rem;
     color: var(--gold);
+    margin-bottom: 40px;
 }
 
-.testimonial-slider p {
-    font-size: 1.2rem;
-    font-style: italic;
+.testimonial-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.testimonials .col-md-4 {
+    background: var(--dark-gray);
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+.testimonials .col-md-4:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px var(--gold);
 }
 
 /* Parceiros */
 .partners {
     padding: 60px 0;
+}
+
+.partners h2 {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 40px;
 }
 
 .partners img {
