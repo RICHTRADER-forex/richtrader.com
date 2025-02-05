@@ -139,12 +139,6 @@ async function fecharOrdem(id) {
 /**
  * 🔥 Captura clique no botão "Fechar"
  */
-document.addEventListener("click", function (event) {
-    if (event.target.classList.contains("fechar-ordem")) {
-        const ordemId = event.target.getAttribute("data-id");
-        fecharOrdem(ordemId);
-    }
-});
 document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.getElementById("menu-toggle");
     const sidebar = document.getElementById("sidebar");
@@ -155,3 +149,4 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
