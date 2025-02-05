@@ -34,6 +34,9 @@ header h1 {
 
 /* 🔹 Botão do menu (Hambúrguer) */
 .menu-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px; /* ✅ Posicionando no canto superior direito */
     font-size: 24px;
     background: none;
     border: none;
@@ -41,6 +44,7 @@ header h1 {
     cursor: pointer;
     padding: 5px 10px;
     transition: 0.3s;
+    z-index: 1100; /* ✅ Garantindo que fica acima do conteúdo */
 }
 
 .menu-btn:hover {
@@ -52,19 +56,19 @@ header h1 {
 .sidebar {
     position: fixed;
     top: 0;
-    right: -250px; /* Escondido inicialmente */
+    left: -250px; /* ✅ Agora escondido no lado esquerdo */
     width: 250px;
     height: 100vh;
     background: rgba(0, 0, 0, 0.9);
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
     padding-top: 60px;
-    transition: right 0.3s ease-in-out;
+    transition: left 0.3s ease-in-out;
     z-index: 1050;
 }
 
 /* Exibir o menu quando ativo */
 .sidebar.active {
-    right: 0;
+    left: 0; /* ✅ Agora aparece no lado esquerdo */
 }
 
 /* Links do menu */
