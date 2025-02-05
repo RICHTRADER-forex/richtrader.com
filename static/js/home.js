@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", revealSections);
     revealSections(); // Chamar ao carregar a página
 
-    // 🔹 Slider Automático para Depoimentos
+    // 🔹 Slider Automático para Depoimentos (Evita Erros se o Elemento Não Existir)
     const testimonials = document.querySelector(".testimonial-slider");
     if (testimonials) {
         let testimonialsList = [
@@ -40,33 +40,21 @@ document.addEventListener("DOMContentLoaded", function () {
         updateTestimonial();
     }
 
-    // 🔹 Efeito de Hover nos Cards de Benefícios
+    // 🔹 Efeito de Hover nos Cards de Benefícios (Melhorando a Performance)
     const benefitCards = document.querySelectorAll(".benefits .col-md-3");
     benefitCards.forEach(card => {
-        card.addEventListener("mouseenter", () => {
-            card.style.transform = "translateY(-5px)";
-            card.style.boxShadow = "0 10px 20px rgba(0, 0, 0, 0.2)";
-        });
-        card.addEventListener("mouseleave", () => {
-            card.style.transform = "translateY(0)";
-            card.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
-        });
+        card.addEventListener("mouseenter", () => card.classList.add("hover-effect"));
+        card.addEventListener("mouseleave", () => card.classList.remove("hover-effect"));
     });
 
-    // 🔹 Efeito Hover nos Logos de Parceiros
+    // 🔹 Efeito Hover nos Logos de Parceiros (Melhorando Performance)
     const partnerLogos = document.querySelectorAll(".partners img");
     partnerLogos.forEach(logo => {
-        logo.addEventListener("mouseenter", () => {
-            logo.style.filter = "grayscale(0%)";
-            logo.style.transform = "scale(1.1)";
-        });
-        logo.addEventListener("mouseleave", () => {
-            logo.style.filter = "grayscale(100%)";
-            logo.style.transform = "scale(1)";
-        });
+        logo.addEventListener("mouseenter", () => logo.classList.add("logo-hover"));
+        logo.addEventListener("mouseleave", () => logo.classList.remove("logo-hover"));
     });
 
-    // 🔹 Alerta no Clique no Botão CTA
+    // 🔹 Alerta no Clique no Botão CTA (Corrigindo Redirecionamento)
     const ctaButton = document.querySelector(".hero .btn");
     if (ctaButton) {
         ctaButton.addEventListener("click", function (event) {
@@ -80,15 +68,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 cancelButtonText: "Voltar"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "/register";
+                    window.location.href = "register.html"; // ✅ Corrigido para GitHub Pages
                 }
             });
         });
     }
 
-});
-// Script para abrir e fechar o menu
-document.addEventListener("DOMContentLoaded", function () {
+    // 🔹 Script para abrir e fechar o menu lateral (Removendo Código Duplicado)
     const menuToggle = document.getElementById("menu-toggle");
     const sidebar = document.getElementById("sidebar");
 
@@ -97,5 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
             sidebar.classList.toggle("active");
         });
     }
+
 });
 
