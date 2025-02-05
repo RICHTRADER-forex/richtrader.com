@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 cancelButtonText: "Voltar"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "register.html"; // ✅ Corrigido para GitHub Pages
+                    window.location.href = "templates/register.html"; // ✅ Corrigido para GitHub Pages
                 }
             });
         });
