@@ -16,7 +16,7 @@ header {
     background: rgba(0, 0, 0, 0.95);
     padding: 15px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* ✅ Botão no canto superior direito */
     align-items: center;
     position: fixed;
     top: 0;
@@ -44,7 +44,7 @@ header {
 .sidebar {
     position: fixed;
     top: 0;
-    left: -250px;
+    left: -250px; /* ✅ Agora escondido no lado esquerdo */
     width: 250px;
     height: 100vh;
     background: rgba(0, 0, 0, 0.95);
