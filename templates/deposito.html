@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depósito - RICH TRADER</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/deposito.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <div class="deposit-container">
+        <h2>Realizar Depósito</h2>
+
+        <!-- Seleção do Método de Pagamento -->
+        <label for="payment-method">Escolha o Método de Pagamento:</label>
+        <select id="payment-method">
+            <option value="">Selecione...</option>
+            <option value="bank">Transferência Bancária</option>
+            <option value="crypto">Criptomoedas</option>
+        </select>
+
+        <!-- Seção Transferência Bancária -->
+        <div id="bank-section" class="hidden">
+            <label for="country">Selecione o País:</label>
+            <select id="country">
+                <option value="">Selecione...</option>
+                <option value="pt">Portugal</option>
+                <option value="ao">Angola</option>
+                <option value="br">Brasil</option>
+            </select>
+
+            <div id="bank-details" class="hidden">
+                <h3>Dados Bancários</h3>
+                <p id="bank-info"></p>
+            </div>
+        </div>
+
+        <!-- Seção Criptomoedas -->
+        <div id="crypto-section" class="hidden">
+            <h3>Endereço de Depósito (USDT - BEP20)</h3>
+            <p>⚠ Envie apenas USDT na rede BEP20!</p>
+            <input type="text" value="0xb1d88663d4b6d3afa1920f46223d9cadaf6a2b0d" readonly>
+        </div>
+
+        <!-- Upload do Comprovante -->
+        <label for="comprovante">Envie o Comprovante (JPG, PNG, PDF):</label>
+        <input type="file" id="comprovante" accept=".jpg,.png,.pdf">
+
+        <!-- Montante e IBAN do Usuário -->
+        <label for="amount">Valor do Depósito:</label>
+        <input type="number" id="amount" min="0.01" step="0.01" placeholder="Digite o valor">
+
+        <label for="iban">Seu IBAN (ID Único):</label>
+        <input type="text" id="iban" placeholder="Digite seu IBAN">
+
+        <p id="iban-name" class="hidden"></p>
+
+        <!-- Botão de Envio -->
+        <button id="submit-deposit" disabled>Confirmar Depósito</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/deposito.js') }}"></script>
+
+</body>
+</html>

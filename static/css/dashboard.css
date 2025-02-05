@@ -1,0 +1,116 @@
+/* dashboard.css */
+
+/* Reset e estilo geral */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Cabeçalho fixo */
+header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Botão do menu */
+.menu-btn {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.menu-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Sidebar (Menu Lateral) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Escondido inicialmente */
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+    padding-top: 60px;
+    transition: left 0.3s ease-in-out;
+    z-index: 1050;
+}
+
+/* Exibir o menu quando ativo */
+.sidebar.active {
+    left: 0;
+}
+
+/* Links do menu */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff !important;
+    font-size: 16px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .user-info, .dynamic-content {
+        width: 95%;
+    }
+
+    header h1 {
+        font-size: 16px;
+    }
+
+    .menu-btn {
+        font-size: 22px;
+        padding: 5px;
+    }
+
+    .sidebar {
+        width: 220px;
+    }
+}
+
+

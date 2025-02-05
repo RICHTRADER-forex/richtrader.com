@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico - RICH TRADER</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/grafico.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- ✅ Certifique-se de incluir a versão correta do Lightweight Charts -->
+    <script src="https://unpkg.com/lightweight-charts@3.8.0/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+
+    <header>
+        <button id="menu-toggle" class="menu-btn">☰</button>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <nav id="sidebar" class="sidebar">
+        <ul>
+            <li><a href="/">🏠 Home</a></li>
+            <li><a href="/dashboard">📊 Dashboard</a></li>
+            <li><a href="/ordens_abertas">📈 Ordens Abertas</a></li>
+            <li><a href="/historico">📜 Histórico</a></li>
+            <li><a href="/order_book">📘 Order Book</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Botões de Compra e Venda -->
+    <div class="buttons-container">
+        <button id="buy-btn" class="buy-button">Comprar</button>
+        <button id="sell-btn" class="sell-button">Vender</button>
+    </div>
+    
+
+    <!-- Contêiner do Gráfico -->
+    <div id="chart-container"></div>
+
+   <!-- 🔥 Biblioteca Socket.IO para WebSockets -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
+<script src="{{ url_for('static', filename='js/grafico.js') }}"></script>
+
+</body>
+</html>

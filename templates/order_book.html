@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Book</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Ícones Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/order_book.css') }}">
+</head>
+<body>
+    
+    <!-- 🔥 Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">RICH TRADER FOREX</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">🏠 Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/order_book">📘 Order Book</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🔥 Container Principal -->
+    <div class="container mt-4">
+        <h2 class="text-center">📘 Order Book</h2>
+
+        <!-- 📉 Ordens de Venda -->
+        <h3 class="mt-4 text-danger">📉 Ordens de Venda</h3>
+        <table class="table table-striped table-bordered text-center">
+            <thead class="table-danger">
+                <tr>
+                    <th>Trader</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Data/Hora</th>
+                </tr>
+            </thead>
+            <tbody id="ordens-venda">
+                <!-- Ordens serão carregadas via JavaScript -->
+            </tbody>
+        </table>
+
+        <!-- 📈 Ordens de Compra -->
+        <h3 class="mt-4 text-success">📈 Ordens de Compra</h3>
+        <table class="table table-striped table-bordered text-center">
+            <thead class="table-success">
+                <tr>
+                    <th>Trader</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Data/Hora</th>
+                </tr>
+            </thead>
+            <tbody id="ordens-compra">
+                <!-- Ordens serão carregadas via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS Personalizado -->
+    <script src="{{ url_for('static', filename='js/order_book.js') }}"></script>
+
+</body>
+</html>

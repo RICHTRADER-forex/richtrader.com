@@ -1,0 +1,65 @@
+/* Reset e estilo geral */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Container do formulário de cadastro */
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+/* Cartão do formulário */
+.register-card {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Título */
+h2 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Inputs */
+.form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #007bff;
+    color: #fff;
+}
+
+/* Botão */
+.btn-primary {
+    background: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+/* Link para login */
+a {
+    color: #007bff;
+}
+
+a:hover {
+    color: #0056b3;
+}

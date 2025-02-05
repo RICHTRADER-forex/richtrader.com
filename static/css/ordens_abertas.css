@@ -1,0 +1,84 @@
+/* 🔹 Estilização Global */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🔹 Navbar */
+.navbar {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* 🔹 Ajuste do Menu Hamburguer */
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+/* 🔹 Container Principal */
+.container {
+    max-width: 1200px;
+}
+
+/* 🔹 Título */
+h2 {
+    font-weight: bold;
+    color: #212529;
+    margin-bottom: 20px;
+}
+
+/* 🔹 Tabela Responsiva */
+.table {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th {
+    background-color: #343a40;
+    color: white;
+}
+
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px;
+}
+
+/* 🔹 Responsividade para Telas Menores */
+@media (max-width: 768px) {
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Operações</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Ícones do Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/historico.css') }}">
+</head>
+<body>
+
+    <!-- 🔥 Menu Hambúrguer -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">RICH TRADER FOREX</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">🏠 Home</a></li>
+                    <li><a href="/grafico" class="nav-link">📊 Gráficos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dashboard">📊 Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ordens_abertas">📈 Ordens Abertas</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/historico">📜 Histórico</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/order_book">📘 Order Book</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout">🚪 Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🔥 Container Principal -->
+    <div class="container mt-4">
+        <h2 class="text-center">📜 Histórico de Operações</h2>
+
+        <!-- Tabela de Histórico -->
+        <div class="table-responsive">
+<!-- Adicione essa tabela dentro do histórico -->
+<table class="table table-striped table-bordered text-center">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Ativo</th>
+            <th>Preço de Entrada</th>
+            <th>Quantidade</th>
+            <th>Lucro/Prejuízo (€)</th>
+            <th>Comissão (€)</th>  <!-- ✅ Nova coluna -->
+            <th>Data de Fechamento</th>
+        </tr>
+    </thead>
+    <tbody id="tabela-historico">
+        <!-- As ordens fechadas serão inseridas dinamicamente pelo JS -->
+    </tbody>
+</table>
+
+            
+            
+            
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- JS Personalizado -->
+    <script src="{{ url_for('static', filename='js/historico.js') }}"></script>
+
+</body>
+</html>
