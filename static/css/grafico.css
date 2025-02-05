@@ -1,33 +1,34 @@
 /* Reset e estilos gerais */
-body {
+body, html {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #1a1a1a;
     color: white;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
 }
 
 /* 🔹 Cabeçalho */
 header {
     width: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.95);
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
-    z-index: 1000;
+    z-index: 1100;
 }
 
 header h1 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     margin: 0;
 }
@@ -36,15 +37,15 @@ header h1 {
 .menu-btn {
     position: fixed;
     top: 15px;
-    right: 15px; /* ✅ Posicionando no canto superior direito */
+    right: 15px;
     font-size: 24px;
     background: none;
     border: none;
     color: white;
     cursor: pointer;
     padding: 5px 10px;
-    transition: 0.3s;
-    z-index: 1100; /* ✅ Garantindo que fica acima do conteúdo */
+    transition: background 0.3s ease-in-out;
+    z-index: 1200;
 }
 
 .menu-btn:hover {
@@ -56,19 +57,19 @@ header h1 {
 .sidebar {
     position: fixed;
     top: 0;
-    left: -250px; /* ✅ Agora escondido no lado esquerdo */
+    left: -250px;
     width: 250px;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.9);
-    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.95);
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
     padding-top: 60px;
     transition: left 0.3s ease-in-out;
-    z-index: 1050;
+    z-index: 1150;
 }
 
 /* Exibir o menu quando ativo */
 .sidebar.active {
-    left: 0; /* ✅ Agora aparece no lado esquerdo */
+    left: 0;
 }
 
 /* Links do menu */
@@ -96,52 +97,60 @@ header h1 {
     border-radius: 5px;
 }
 
-/* 🔹 Área do Gráfico */
-#chart-container {
-    width: 100%;
-    height: calc(100vh - 60px); /* Preenche toda a tela menos o header */
-    margin-top: 60px;
-}
-
 /* 🔹 Botões de Compra e Venda */
 .trade-buttons {
     position: fixed;
-    top: 80px; /* Alinhado ao topo, abaixo do cabeçalho */
-    width: 100%;
+    top: 70px; /* Mantendo abaixo do cabeçalho */
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
+    justify-content: center;
+    gap: 15px;
+    z-index: 1100;
 }
 
 /* Botões estilizados */
-.buy, .sell {
+.buy-button, .sell-button {
     font-size: 18px;
     font-weight: bold;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
 }
 
 /* Estilo do botão de compra */
-.buy {
-    background-color: #28a745;
+.buy-button {
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Azul */
     color: white;
 }
 
-.buy:hover {
-    background-color: #218838;
+.buy-button:hover {
+    background: linear-gradient(135deg, #0056b3, #003580);
+    box-shadow: 0 0 12px rgba(0, 123, 255, 0.7);
 }
 
 /* Estilo do botão de venda */
-.sell {
-    background-color: #dc3545;
+.sell-button {
+    background: linear-gradient(135deg, #dc3545, #a71d2a); /* Vermelho */
     color: white;
 }
 
-.sell:hover {
-    background-color: #c82333;
+.sell-button:hover {
+    background: linear-gradient(135deg, #a71d2a, #7b131d);
+    box-shadow: 0 0 12px rgba(220, 53, 69, 0.7);
+}
+
+/* 🔹 Área do Gráfico */
+#chart-container {
+    position: absolute;
+    top: 120px; /* Ajuste para não cobrir os botões */
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 120px);
 }
 
 /* 🔹 Responsividade */
@@ -152,61 +161,9 @@ header h1 {
         gap: 10px;
     }
 
-    .buy, .sell {
+    .buy-button, .sell-button {
         width: 90%;
         text-align: center;
     }
-}
-/* Estilo dos botões de compra e venda */
-.buttons-container {
-    position: absolute;
-    top: 10px; /* Distância do topo */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 15px;
-    z-index: 1000; /* Garante que fiquem acima do gráfico */
-}
-
-.buy-button, .sell-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.buy-button {
-    background-color: #2ecc71; /* Verde */
-    color: white;
-}
-
-.sell-button {
-    background-color: #e74c3c; /* Vermelho */
-    color: white;
-}
-
-/* Garantir que o gráfico ocupa a tela corretamente */
-#chart-container {
-    position: absolute;
-    top: 50px; /* Ajuste para não cobrir os botões */
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 50px);
-}
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-#chart-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh; /* ✅ Agora o gráfico ocupa toda a tela */
 }
 
