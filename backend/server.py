@@ -2,10 +2,15 @@ from flask import Flask, request, jsonify
 import smtplib
 import random
 from email.mime.text import MIMEText
+import sys
+import os
+
+# Garante que o Python encontra a pasta Banco_de_dados corretamente
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 # Importações ajustadas corretamente
 from Banco_de_dados.config_db import get_db_connection
-from Banco_de_dados.utils import gerar_iban
+from Banco_de_dados.utils import gerar_iban  # Certifique-se de que utils.py existe
 
 app = Flask(__name__)
 
