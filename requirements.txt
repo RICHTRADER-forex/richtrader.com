@@ -1,1 +1,5 @@
+Flask
 gunicorn
+psycopg2
+smtplib
+email
