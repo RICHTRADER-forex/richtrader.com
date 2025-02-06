@@ -4,7 +4,7 @@ import random
 from email.mime.text import MIMEText
 
 # Importações ajustadas corretamente
-from backend.Banco_de_dados.config_db import get_db_connection
+from Banco_de_dados.config_db import get_db_connection
 from Banco_de_dados.utils import gerar_iban
 
 app = Flask(__name__)
